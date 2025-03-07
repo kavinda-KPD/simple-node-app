@@ -1,9 +1,11 @@
-const express = require('express');
-const app = express();
-const port = 4000;
+require("dotenv").config(); // Add this line at the top
 
-app.get('/', (req, res) => {
-  res.send('Hello World!');
+const express = require("express");
+const app = express();
+const port = process.env.PORT; // Fallback to 4000 if PORT is not set
+
+app.get("/", (req, res) => {
+  res.send("Hello World!");
 });
 
 app.listen(port, () => {
